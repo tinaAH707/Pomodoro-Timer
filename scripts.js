@@ -1,0 +1,1 @@
+//any functions for the actual app
