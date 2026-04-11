@@ -1,0 +1,129 @@
+:root{
+    --l1-purple: #F7E0FC;
+    --l2-purple: #E3C3EA;
+    --m-purple: #A86FB5;
+    --d-purple: #410E4C;
+    --font-type: "Dk-crayon-crumble", Arial, Helvetica;
+
+
+}
+    @font-face{
+        font-family: Dk-crayon-crumble;
+        src: url(../content/DK_Crayon_Crumble.ttf);
+    }
+
+
+
+body{
+    margin: 0;
+    /* height: 587px;
+    width: 397px; */
+
+    font-family: var(--font-type);
+    font-size: 20px;
+    background: linear-gradient(var(--l1-purple), var(--m-purple));
+    
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+
+    p{
+        margin: 0;
+    }
+
+        
+    .header{
+        
+            display: flex;
+            align-items: center;
+            gap: 155px;
+
+   
+            
+            img{
+                height: 70px;
+            }
+            
+            .settings{
+                img{
+                    height: 40px;
+                }
+            }
+
+
+            .oc-toggle{
+                display: flex;
+                flex-direction: row;
+
+                .aki{
+                    .unselcted{
+                        display: none;
+                    }
+                    .selected{
+                        opacity: 59%;
+                    }
+                    cursor: pointer;
+                }
+
+                .mimi{
+                    .selected{
+                        display: none;
+                    }
+                    cursor: pointer;
+                }
+
+            }
+    }
+    
+
+    .animation{
+        display: flex;
+        justify-content: center;
+        img{
+            width: 300px;
+        }      
+        
+        #aki-animation{
+            display: none;
+        }
+    }
+
+    .timer{
+        font-size: 64px;    
+    }
+
+    .buttons-div{
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        .button{
+            color: var(--l1-purple);
+            height: 40px;
+            width: 133px;
+            background-color: var(--m-purple);
+            box-shadow: 0 5px 0 0 var(--d-purple);
+            border-radius: 20px;
+            text-align: center;
+            align-content: center;
+        }
+    }
+
+.do-you-task{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .task{
+        display: flex;
+        flex-direction: row;
+        gap:5px;
+    }
+}
+
+
+}
+

@@ -5,58 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My OC Pomodoro Timer!</title>
 
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
+
 </head>
 
 <body>
-    <body>
         <div class="header">
-            <figure class="settings">
-                <img src="" alt="">
-            </figure>
-
-            <div class="oc-toggle">
-                <figure>
-                    <div class="aki">
-                        <img src="" alt="" class="selected">
-                        <img src="" alt="" class="unselcted">
-                    </div>
-
-
-                    <div class="mimi">
-                        <img src="content/images/Mimi Clicked4.png" alt="" class="selected">
-                        <img src="content/images/Mimi Clicked.png" alt="" class="unselcted">
-                    </div>
-
-                </figure>
+            <div class="settings">
+                <img src="content/images/setting.png" alt="settings icon">
             </div>
 
+            <div class="oc-toggle">
+                <div class="aki">
+                    <img src="content/images/aki-Unclick.png" alt="character aki icon" class="selected">
+                    <img src="content/images/aki-clicked.png" alt="character aki icon with a glowing circle over her" class="unselcted">
+                </div>
+
+
+                <div class="mimi">
+                    <img src="content/images/mimi-UNclick.png" alt="character mimi icon" class="selected">
+                    <img src="content/images/mimi-Clicked.png" alt="character mimi icon with a glowing circle over her" class="unselcted">
+                </div>
+            </div>
         </div>
 
         <div class="animation">
-            <video id="aki-animation" src=""></video>
-            <video id="mimi-animation" src=""></video>
+            <img id="aki-animation" src="content/animation/aki-animation.gif" alt="character aki on stomatch kicking her legs">
+            <img id="mimi-animation" src="content/animation/mimi-animation.gif" alt="charcter mimi sitting and eating a cookie">
         </div>
 
         <!--Timer-->
+        <div class="timer">24:00</div>
 
-        <div class="buttons">
-            <div class="go">GO!</div>
-            <div class="stop">STOP!</div>
+        <div class="buttons-div">
+            <div class="button" id="go-button">GO!</div>
+            <div class="button" id="stop-button">STOP!</div>
         </div>
         
         <div class="do-you-task">
             <p>do yer tasks</p>
-            <ul>
-                <li>task 1</li>
-                <li>task 2</li>
-                <li>task 3</li>
-            </ul><!--basically this shoudl automatically add on when you add a task..??idk how lmao-->
+            <div class="task">
+                <div class="checkbox"></div>
+                <p id="custom task 1">task 1</p>
+            </div>
+
+            <div class="task">
+                <input type="checkbox">
+                <div class="checkbox"></div>
+                <p id="custom task 2">task 3</p>
+            </div>
+
+            <div class="task">
+                <div class="checkbox"></div>
+                <p id="custom task 3">task 4</p>
+            </div>
+
         </div>
 
         <!--make the overlay for the settings-->
     
-    </body>
     
 </body>
+
+ <script src="scripts.js"></script>
 </html>
