@@ -21,7 +21,7 @@ body{
 
     font-family: var(--font-type);
     font-size: 20px;
-    background: linear-gradient(var(--l1-purple), var(--m-purple));
+    background: linear-gradient(var(--l1-purple) 60%, var(--m-purple));
     
     
     display: flex;
@@ -29,7 +29,7 @@ body{
     justify-content: center;
     align-items: center;
 
-    gap: 10px;
+   
 
     p{
         margin: 0;
@@ -45,7 +45,7 @@ body{
    
             
             img{
-                height: 70px;
+                height: 65px;
             }
             
             .settings{
@@ -84,7 +84,7 @@ body{
         display: flex;
         justify-content: center;
         img{
-            width: 300px;
+            width: 250px;
         }      
         
         #aki-animation{
@@ -112,16 +112,46 @@ body{
         }
     }
 
-.do-you-task{
+.input-area{
+    margin: 20px 0;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    gap: 5px;
 
-    .task{
+    #task-input{
+        background-color: transparent;
+        border: none;        
+        border-bottom: 1px solid var(--l1-purple);
+
+    }
+
+        input::placeholder{
+            color: var(--l1-purple);
+            opacity: 50%;
+            font-style: italic;
+            text-align: center;
+        }
+
+    /* .task{
         display: flex;
         flex-direction: row;
         gap:5px;
+    } */
+
+    #add-task-button{
+        background: transparent;
+        border: none;
+        padding: 0;
+        height: 22px;
+        align-self: center;
+
+        img{
+            max-height: 100%;
+           
+        }
+        
     }
+
 }
 
 
