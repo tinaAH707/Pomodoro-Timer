@@ -18,20 +18,21 @@
 
             <div class="oc-toggle">
                 <div class="aki">
-                    <img src="content/images/aki-Unclick.png" alt="character aki icon" class="selected">
-                    <img src="content/images/aki-clicked.png" alt="character aki icon with a glowing circle over her" class="unselcted">
+                        <img src="content/images/aki-Unclick.png" id="aki-unselected" alt="character aki icon" class="unselected">
+
+                        <!-- <img src="content/images/aki-clicked.png" alt="character aki icon with a glowing circle over her" class="selected" id="aki-selected"> -->
                 </div>
 
 
                 <div class="mimi">
-                    <img src="content/images/mimi-UNclick.png" alt="character mimi icon" class="selected">
-                    <img src="content/images/mimi-Clicked.png" alt="character mimi icon with a glowing circle over her" class="unselcted">
+                    <!-- <img src="content/images/mimi-UNclick.png" alt="character mimi icon" class="unselected" id="mimi-unselected"> -->
+                    <img src="content/images/mimi-Clicked.png" alt="character mimi icon with a glowing circle over her" class="selected" id="mimi-selected">
                 </div>
             </div>
         </div>
 
         <div class="animation">
-            <img id="aki-animation" src="content/animation/aki-animation.gif" alt="character aki on stomatch kicking her legs">
+            <!-- <img id="aki-animation" src="content/animation/aki-animation.gif" alt="character aki on stomatch kicking her legs"> -->
             <img id="mimi-animation" src="content/animation/mimi-animation.gif" alt="charcter mimi sitting and eating a cookie">
         </div>
 
@@ -48,6 +49,9 @@
                 <input type="text" id="task-input" placeholder="add yer task">
                 <button type="submit" id="add-task-button"><img src="content/images/add.png" alt="plus button"></button>
             </form>
+            <div class="todo-container">
+                <ul id="task-list"></ul>
+            </div>
             <!-- <p>do yer tasks !</p>
             <div class="task">
                 <input type="checkbox">
@@ -71,5 +75,9 @@
     
 </body>
 
- <script src="scripts.js"></script>
+ <script src="scripts.js">
+
+    
+
+ </script>
 </html>
