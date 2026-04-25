@@ -59,20 +59,26 @@ body{
                 flex-direction: row;
 
                 .aki{
-                     .selected{
+                     
+                    .selected{
                         display: none;
                     }
-                    
+                   
                     cursor: pointer;
-                
+
+                   
                 }
 
              
                 .mimi{
+
                     .unselected{
                         display: none;
                     }
+                  
                     cursor: pointer;
+
+                  
                 }
 
                 
@@ -88,7 +94,7 @@ body{
             width: 250px;
         }      
         
-        #aki-animation{
+        .aki-anim{
             display: none;
         }
     }
