@@ -12,8 +12,8 @@
 
 <body>
         <div class="header">
-            <div class="settings">
-                <img src="content/images/setting.png" alt="settings icon">
+            <div  class="settings">
+                <img id="setting-icon" src="content/images/setting.png" alt="settings icon">
             </div>
 
             <div class="oc-toggle">
@@ -58,25 +58,65 @@
                 </ul>
 
             </div>
-            <!-- <p>do yer tasks !</p>
-            <div class="task">
-                <input type="checkbox">
-                <p id="custom task 1">task 1</p>
-            </div>
-
-            <div class="task">
-                <input type="checkbox">
-                <p id="custom task 2">task 2</p>
-            </div>
-
-            <div class="task">
-                <input type="checkbox">
-                <p id="custom task 3">task 3</p>
-            </div> -->
+         
 
         </div>
 
         <!--make the overlay for the settings-->
+        <aside id="setting-div-aside" class="blur-bg-settings">
+            <div class="settings-box">
+                    <div id="setting-exit-button"> 
+                        <img class="exit-2" src="content/images/exit-settings.png" alt="">
+                    </div>
+                    
+
+                    <div class="settings-choices" id="settings-choice">
+                        <h1 id="option-setting-click">Options</h1>
+                        <h1 id="history-setting-click">History</h1>
+                    </div>       
+    
+
+
+                <div class="options-box">
+                    <div class="timer-descrp">
+                        <h1>Timer Settings</h1>
+                        <p>(in minutes)</p>
+                    </div>
+
+                    <div class="timer-box" id="setting-timerbox">
+                        <div class="locked-in">
+                            <p>locked in:</p>
+                            <p id="custom-time"></p>
+                        </div>
+
+                        <div class="short-break">
+                            <p>small break:</p>
+                            <p id="custom-time"></p>
+                        </div>
+
+                        <div class="long-break">
+                            <p>looong break:</p>
+                            <p id="custom-time"></p>
+                        </div>
+                </div>
+
+
+                </div>
+    
+                <div class="history-box">
+                    <div class="total-time">
+                        <h1>Total Time Spent Studying/Working</h1>
+                        <p id="total-time-spent"></p>   
+                    </div>
+
+                    <div>
+                        <h1>This week:</h1>
+                        <p id="current-time-spent"></p>
+                    </div>           
+                </div>
+            </div>            
+        </aside>
+
    
     
 </body>

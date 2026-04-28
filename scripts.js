@@ -22,6 +22,8 @@
         taskButton.addEventListener("click", (addTask));
         akiSelect();
         mimiSelect();
+        openSetting();
+        closeSetting();
     });
 
 
@@ -44,56 +46,29 @@
         doneS.play();
     }
 
+//Settings =========================================================
 
+const settingIcon = document.getElementById("setting-icon");
+const settingOverlay = document.getElementById("setting-div-aside");
+const settingExit = document.getElementById("setting-exit-button");
 
-// Task Box ====================================================
-    function addTask(){
-        event.preventDefault();
-        
+console.log(settingExit)
 
-        if(taskBox.value === ""){
-            alert("add a freaking task >:3 !");
-        } else{
-            let li = document.createElement("li");
-            li.innerHTML = taskBox.value;
-            listContainer.appendChild(li);  
-
-            let span = document.createElement("span");
-            span.innerHTML="\u00d7";
-            li.appendChild(span);
-            soundClick();
-        }
-        taskBox.value = '';
-        saveData(); //after task is called it will save it        
-    };
-         
-
-    listContainer.addEventListener("click", function(e){
-        if(e.target.tagName === "LI"){
-            e.target.classList.toggle("checked"); //clicked the li item and it will check it
-            saveData();
-            soundDone();
-        }
-        else if(e.target.tagName === "SPAN"){ //click the x and it will remove the element
-            e.target.parentElement.remove();
-            saveData();
-            
-        }
+function openSetting(){
+    settingIcon.addEventListener('click', () =>{
+        settingOverlay.classList.add('show');
+        soundClick();
+    });
     
-    }, false);
+}
 
-
-    function saveData(){
-        localStorage.setItem("data", listContainer.innerHTML);
-    }
-
-    function showTask(){
-        listContainer.innerHTML = localStorage.getItem("data");
-    }
-
-   showTask();
-
-
+//THIS IS NOT WORKING >:(
+function closeSetting(){
+    settingExit.addEventListener('click', () =>{
+        settingOverlay.classList.remove('show');
+        soundClick();
+    });
+}
 
 // Select States ====================================================
    function akiSelect(){
@@ -153,6 +128,57 @@
             mimiUnselcted.style.transform = 'scale(1)';
         });
     };
+
+
+// Task Box ====================================================
+    function addTask(){
+        event.preventDefault();
+        
+
+        if(taskBox.value === ""){
+            alert("add a freaking task >:3 !");
+        } else{
+            let li = document.createElement("li");
+            li.innerHTML = taskBox.value;
+            listContainer.appendChild(li);  
+
+            let span = document.createElement("span");
+            span.innerHTML="\u00d7";
+            li.appendChild(span);
+            soundClick();
+        }
+        taskBox.value = '';
+        saveData(); //after task is called it will save it        
+    };
+         
+
+    listContainer.addEventListener("click", function(e){
+        if(e.target.tagName === "LI"){
+            e.target.classList.toggle("checked"); //clicked the li item and it will check it
+            saveData();
+            soundDone();
+        }
+        else if(e.target.tagName === "SPAN"){ //click the x and it will remove the element
+            e.target.parentElement.remove();
+            saveData();
+            
+        }
+    
+    }, false);
+
+
+    function saveData(){
+        localStorage.setItem("data", listContainer.innerHTML);
+    }
+
+    function showTask(){
+        listContainer.innerHTML = localStorage.getItem("data");
+    }
+
+   showTask();
+
+
+
 
 //Stop Watch =========================================================
 
