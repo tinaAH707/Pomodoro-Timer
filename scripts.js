@@ -24,6 +24,7 @@
         mimiSelect();
         openSetting();
         closeSetting();
+        settingsSwitch();
     });
 
 
@@ -52,7 +53,11 @@ const settingIcon = document.getElementById("setting-icon");
 const settingOverlay = document.getElementById("setting-div-aside");
 const settingExit = document.getElementById("setting-exit-button");
 
-console.log(settingExit)
+const optionsBtn = document.getElementById("option-setting-click");
+const historyBtn = document.getElementById("history-setting-click");
+const optionsSet = document.getElementById("options-info");
+const historySet = document.getElementById("history-info");
+
 
 function openSetting(){
     settingIcon.addEventListener('click', () =>{
@@ -62,13 +67,39 @@ function openSetting(){
     
 }
 
-//THIS IS NOT WORKING >:(
 function closeSetting(){
     settingExit.addEventListener('click', () =>{
         settingOverlay.classList.remove('show');
         soundClick();
     });
 }
+
+function settingsSwitch(){
+
+    historyBtn.addEventListener('click', () =>{  
+        optionsBtn.style.cssText='opacity:50%; filter:none;';      
+        historyBtn.style.cssText=' opacity:100%; filter: drop-shadow(0px 0px 2px var(--l1-purple));'
+
+        optionsSet.style.display= 'none';
+        historySet.style.display = 'block';
+        soundClick();
+    })
+
+    optionsBtn.addEventListener('click', () =>{  
+        historyBtn.style.cssText='opacity:50%; filter:none;';      
+        optionsBtn.style.cssText=' opacity:100%; filter: drop-shadow(0px 0px 2px var(--l1-purple));'
+
+        historySet.style.display= 'none';
+        optionsSet.style.display = 'block';
+         soundClick();
+    })
+
+}
+
+
+
+
+
 
 // Select States ====================================================
    function akiSelect(){
@@ -133,7 +164,6 @@ function closeSetting(){
 // Task Box ====================================================
     function addTask(){
         event.preventDefault();
-        
 
         if(taskBox.value === ""){
             alert("add a freaking task >:3 !");

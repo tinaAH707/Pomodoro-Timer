@@ -11,6 +11,9 @@
 </head>
 
 <body>
+    <nav>
+        
+    </nav>
         <div class="header">
             <div  class="settings">
                 <img id="setting-icon" src="content/images/setting.png" alt="settings icon">
@@ -26,7 +29,10 @@
                 <div class="mimi">
                     <img src="content/images/mimi-UNclick.png" alt="character mimi icon" class="unselected" id="mimi-unselected">
                     <img src="content/images/mimi-Clicked.png" alt="character mimi icon with a glowing circle over her" class="selected" id="mimi-selected">
+                 
                 </div>
+
+                
             </div>
             
             
@@ -65,8 +71,8 @@
         <!--make the overlay for the settings-->
         <aside id="setting-div-aside" class="blur-bg-settings">
             <div class="settings-box">
-                    <div id="setting-exit-button"> 
-                        <img class="exit-2" src="content/images/exit-settings.png" alt="">
+                    <div class="exit-setting"> 
+                        <img id="setting-exit-button" class="exit-2" src="content/images/exit-settings.png" alt="">
                     </div>
                     
 
@@ -77,41 +83,44 @@
     
 
 
-                <div class="options-box">
+                <div id="options-info" class="options-box">
                     <div class="timer-descrp">
-                        <h1>Timer Settings</h1>
-                        <p>(in minutes)</p>
+                        <h1>TIMER</h1>
+                        <p class="min-small-text">(in minutes)</p>
                     </div>
 
                     <div class="timer-box" id="setting-timerbox">
-                        <div class="locked-in">
-                            <p>locked in:</p>
-                            <p id="custom-time"></p>
+                        <div class="timer-setting-name">
+                            <p>locked in: #</p>
+                            <p id="locked-in"></p>
                         </div>
 
-                        <div class="short-break">
-                            <p>small break:</p>
-                            <p id="custom-time"></p>
+                        <div class="timer-setting-name">
+                            
+                            <p>small break: #</p>
+                            <p id="short-break"></p>
+                         
+                        
                         </div>
 
-                        <div class="long-break">
-                            <p>looong break:</p>
-                            <p id="custom-time"></p>
+                        <div class="timer-setting-name">
+                            <p>looong break: #</p>
+                            <p id="long-break"></p>
                         </div>
                 </div>
 
 
                 </div>
     
-                <div class="history-box">
+                <div id="history-info" class="history-box">
                     <div class="total-time">
-                        <h1>Total Time Spent Studying/Working</h1>
-                        <p id="total-time-spent"></p>   
+                        <h1>Total Time Spent Working:</h1>
+                        <p id="total-time-spent">###</p>   
                     </div>
 
                     <div>
                         <h1>This week:</h1>
-                        <p id="current-time-spent"></p>
+                        <p id="current-time-spent">###</p>
                     </div>           
                 </div>
             </div>            
