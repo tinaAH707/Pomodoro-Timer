@@ -1,21 +1,32 @@
-const { app, BrowserWindow } = require("electron");
+const { app, BrowserWindow, ipcMain } = require("electron");
+
+let win; // <-- make it global
 
 function createWindow() {
-  const win = new BrowserWindow({
+  win = new BrowserWindow({
     width: 397,
     height: 587,
     resizable: false,
     maximizable: false,
     fullscreenable: false,
-    frame: true, 
+    frame: false, 
     transparent: false,
     webPreferences: {
-      contextIsolation: true
+      nodeIntegration: true,
+      contextIsolation: false
     }
   });
 
   win.loadFile("index.html");
 }
+
+ipcMain.on("manualClose", () => {
+  app.quit();
+});
+
+ipcMain.on("manualMinimize", () => {
+  if (win) win.minimize();
+});
 
 app.whenReady().then(createWindow);
 

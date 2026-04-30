@@ -25,6 +25,7 @@
         openSetting();
         closeSetting();
         settingsSwitch();
+        buttons();
     });
 
 
@@ -47,6 +48,23 @@
         doneS.play();
     }
 
+//Title bar ========================================================
+
+const exitnavBtn = document.getElementById('exit-nav');
+const minimizenavBtn = document.getElementById('minimize-nav');
+const { ipcRenderer}  = require('electron'); //DONT DELTED THIS IT makes the web version weird but this is for electron!!
+
+
+exitnavBtn.addEventListener('click', ()=>{
+    ipcRenderer.send("manualClose");
+});
+
+minimizenavBtn.addEventListener('click', ()=>{
+    ipcRenderer.send("manualMinimize");
+});
+
+
+    
 //Settings =========================================================
 
 const settingIcon = document.getElementById("setting-icon");
@@ -64,6 +82,8 @@ function openSetting(){
         settingOverlay.classList.add('show');
         soundClick();
     });
+    
+    settingHover();
     
 }
 
@@ -133,6 +153,7 @@ function settingsSwitch(){
         
             soundClick();
         })
+        
         hovermimi();
      
    }
@@ -148,6 +169,7 @@ function settingsSwitch(){
         akiUnselcted.addEventListener('mouseleave', () =>{
             akiUnselcted.style.transform = 'scale(1)';
         });
+        
     };
 
     function hovermimi(){
@@ -159,6 +181,55 @@ function settingsSwitch(){
             mimiUnselcted.style.transform = 'scale(1)';
         });
     };
+
+
+    function settingHover(){
+        settingIcon.addEventListener('mouseenter', () =>{
+            settingIcon.style.transform = 'scale(1.1)';
+        });
+        settingIcon.addEventListener('mouseleave', () =>{
+            settingIcon.style.transform = 'scale(1)';
+        });
+    }
+
+    
+
+// Buttons =====================================================
+
+const goBtn = document.getElementById('go-button');
+const stopBtn = document.getElementById('stop-button');
+const restartBtn = document.getElementById('reset-button');
+
+function buttons(){
+    goBtn.addEventListener('click', ()=>{
+        goBtn.style.cssText = 'box-shadow: none; transform: translateY(5px);'
+        
+        setTimeout(() => {
+        goBtn.style.cssText = '';
+    }, 200); 
+    });
+    
+
+    stopBtn.addEventListener('click', ()=>{
+        stopBtn.style.cssText = 'box-shadow: none; transform: translateY(5px);'
+      
+        setTimeout(() => {
+        stopBtn.style.cssText = '';
+    }, 200); 
+    });
+    
+    restartBtn.addEventListener('click', ()=>{
+        restartBtn.style.cssText = 'box-shadow: none; transform: translateY(5px);'
+      
+        setTimeout(() => {
+        restartBtn.style.cssText = '';
+    }, 200); 
+    });
+
+}
+
+
+
 
 
 // Task Box ====================================================
@@ -207,31 +278,5 @@ function settingsSwitch(){
 
    showTask();
 
-
-
-
 //Stop Watch =========================================================
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//Stop and Go Buttons =========================================================
-
-
-
-
-
-
-
-
 
